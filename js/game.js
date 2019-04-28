@@ -6,16 +6,6 @@ var scoreValue = 0;
 var idInterval;
 var self;
 
-function Furyy() {
-    this.x = 0;
-    this.y = 0;
-    this.direction = "right";
-}
-
-function Coin() {
-    this.x = Math.floor(Math.random() * 10);
-    this.y = Math.floor(Math.random() * 10);
-}
 
 function Game() {
     self = this;
@@ -86,31 +76,12 @@ function Game() {
         document.querySelector('.coin').classList.remove('coin');
     };
     this.gameOver = function () {
-            over.classList.remove('invisible');
-            over.querySelector('p').innerText = scoreValue;
-            clearInterval(idInterval);
-            this.hideVisibleFurry();
+        over.classList.remove('invisible');
+        over.querySelector('p').innerText = scoreValue;
+        clearInterval(idInterval);
+        this.hideVisibleFurry();
 
     }
 }
-var game;
-newGame();
 
-function newGame() {
-    game = new Game();
-    game.showFurry();
-    game.showCoin();
-    game.startGame();
-}
-
-document.addEventListener('keydown', function(event){
-    game.turnFurry(event);
-});
-
-btn.addEventListener('click', function () {
-    over.classList.add('invisible');
-    document.querySelector('.coin').classList.remove('coin');
-    scoreValue = 0;
-    score.innerText = scoreValue;
-    newGame();
-});
+module.exports = Game;

@@ -53,6 +53,10 @@ section#score div {
 
 section#over {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   left: 0;
@@ -62,15 +66,28 @@ section#over {
   background-color: rgba(255, 255, 0, 0.75);
 }
 
-section#over pre {
-  display: inline-block;
-  width: 100%;
+section#over{
   text-align: center;
-  font-size: 10px;
+  font-size: 50px;
   font-weight: bolder;
   color: brown;
 }
 
+section#over pre {
+  display: inline-block;
+  width: 100%;
+}
+
+section#over button {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bolder;
+  color: brown;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .invisible {
-  display: none;
+  display: none !important;
 }
